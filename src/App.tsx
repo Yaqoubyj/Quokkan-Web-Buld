@@ -1,6 +1,20 @@
 import { useEffect, useState } from "react";
 import { LangContext, type Lang, useLang, useT } from "./i18n";
-import Placeholder from "./Placeholder";
+import logoQ from "./assets/logo-q.svg";
+import interiorLounge from "./assets/interior-lounge.svg";
+import interiorRoastery from "./assets/interior-roastery.svg";
+import quokkaCup from "./assets/quokka-cup.svg";
+import espressoMarble from "./assets/espresso-marble.svg";
+import croissantCup from "./assets/croissant-cup.svg";
+import cateringIllustration from "./assets/catering-illustration.svg";
+import menuHot from "./assets/menu-hot.svg";
+import menuCold from "./assets/menu-cold.svg";
+import menuFilter from "./assets/menu-filter.svg";
+import menuDessert from "./assets/menu-dessert.svg";
+import bagEthiopia from "./assets/bag-ethiopia.svg";
+import bagColombia from "./assets/bag-colombia.svg";
+import bagCostaRica from "./assets/bag-costarica.svg";
+import bagSalvador from "./assets/bag-salvador.svg";
 
 const WA = "https://wa.me/966531014213";
 const IG = "https://instagram.com/quokka.sa";
@@ -48,7 +62,7 @@ function Nav() {
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? "bg-background/85 backdrop-blur-md border-b border-border" : ""}`}>
       <div className="container-x flex items-center justify-between h-16 md:h-20">
         <a href="#top" className="flex items-center gap-2.5">
-          <span className="h-9 w-9 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-display text-lg">Q</span>
+          <img src={logoQ} alt="Quokka" className="h-9 w-9 rounded-full object-cover" />
           <span className="font-display text-lg tracking-wide">QUOKKA</span>
         </a>
         <nav className="hidden lg:flex items-center gap-8 text-sm">
@@ -87,7 +101,7 @@ function Hero() {
   const t = useT();
   return (
     <section id="top" className="relative min-h-[100svh] flex items-end pt-24 pb-12 md:pb-20">
-      <Placeholder label="Quokka Interior" tone="dark" className="absolute inset-0 w-full h-full object-cover" />
+      <img src={interiorLounge} alt="Quokka Interior" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-charcoal/20 to-charcoal/40" />
       <div className="relative container-x w-full grid md:grid-cols-12 gap-8 items-end text-[oklch(0.985_0.006_80)]">
         <div className="md:col-span-8 fade-up">
@@ -153,14 +167,14 @@ function About() {
         </div>
         <div className="md:col-span-7 order-1 md:order-2 grid grid-cols-6 gap-3 md:gap-4">
           <div className="col-span-4 img-zoom rounded-sm">
-            <Placeholder label="Quokka Coffee Cup" className="aspect-[4/5] w-full object-cover" />
+            <img src={quokkaCup} alt="Quokka Coffee Cup" className="aspect-[4/5] w-full object-cover" />
           </div>
           <div className="col-span-2 flex flex-col gap-3 md:gap-4">
             <div className="img-zoom rounded-sm">
-              <Placeholder label="Espresso" className="aspect-square w-full object-cover" />
+              <img src={espressoMarble} alt="Espresso" className="aspect-square w-full object-cover" />
             </div>
             <div className="img-zoom rounded-sm">
-              <Placeholder label="Croissant" className="aspect-square w-full object-cover" />
+              <img src={croissantCup} alt="Croissant" className="aspect-square w-full object-cover" />
             </div>
           </div>
         </div>
@@ -170,10 +184,10 @@ function About() {
 }
 
 const products = [
-  { name: { en: "Ethiopia Idido", ar: "إثيوبيا إيديدو" }, origin: { en: "Ethiopia", ar: "إثيوبيا" }, weight: "250g", price: 55, label: "Ethiopia Bag" },
-  { name: { en: "Colombia", ar: "كولومبيا" }, origin: { en: "Colombia", ar: "كولومبيا" }, weight: "250g", price: 55, label: "Colombia Bag" },
-  { name: { en: "Costa Rica", ar: "كوستاريكا" }, origin: { en: "Costa Rica", ar: "كوستاريكا" }, weight: "250g", price: 55, label: "Costa Rica Bag" },
-  { name: { en: "Salvador", ar: "السلفادور" }, origin: { en: "El Salvador", ar: "السلفادور" }, weight: "250g", price: 55, label: "Salvador Bag" },
+  { name: { en: "Ethiopia Idido", ar: "إثيوبيا إيديدو" }, origin: { en: "Ethiopia", ar: "إثيوبيا" }, weight: "250g", price: 55, label: "Ethiopia Bag", image: bagEthiopia },
+  { name: { en: "Colombia", ar: "كولومبيا" }, origin: { en: "Colombia", ar: "كولومبيا" }, weight: "250g", price: 55, label: "Colombia Bag", image: bagColombia },
+  { name: { en: "Costa Rica", ar: "كوستاريكا" }, origin: { en: "Costa Rica", ar: "كوستاريكا" }, weight: "250g", price: 55, label: "Costa Rica Bag", image: bagCostaRica },
+  { name: { en: "Salvador", ar: "السلفادور" }, origin: { en: "El Salvador", ar: "السلفادور" }, weight: "250g", price: 55, label: "Salvador Bag", image: bagSalvador },
 ];
 
 function Collection() {
@@ -194,7 +208,7 @@ function Collection() {
           {products.map((p) => (
             <div key={p.name.en} className="group flex flex-col hover-rise">
               <div className="img-zoom bg-background aspect-[4/5] border border-border">
-                <Placeholder label={p.label} className="w-full h-full object-contain" />
+                <img src={p.image} alt={p.label} className="w-full h-full object-contain" />
               </div>
               <div className="pt-5 flex-1 flex flex-col">
                 <div className="flex items-baseline justify-between gap-3">
@@ -218,7 +232,7 @@ function Catering() {
     <section id="catering" className="py-24 md:py-32 container-x">
       <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-center">
         <div className="md:col-span-7 rounded-sm bg-[oklch(0.985_0.006_80)] p-6 md:p-10">
-          <Placeholder label="Catering Setup" className="w-full h-auto max-h-[520px] object-contain" />
+          <img src={cateringIllustration} alt="Catering Setup" className="w-full h-auto max-h-[520px] object-contain" />
         </div>
         <div className="md:col-span-5">
           <div className="text-[11px] tracking-[0.35em] uppercase text-rose mb-5">{t.catering.eyebrow}</div>
@@ -247,10 +261,10 @@ function Menu() {
   const t = useT();
   const { lang } = useLang();
   const items = [
-    { cat: t.menu.cats[0], label: "Hot Coffee", names: { en: ["Espresso", "Americano", "Flat White", "Cortado"], ar: ["إسبريسو", "أمريكانو", "فلات وايت", "كورتادو"] } },
-    { cat: t.menu.cats[1], label: "Cold Drinks", names: { en: ["Iced Latte", "Iced Matcha", "Iced Carcade", "Iced Spanish"], ar: ["لاتيه بارد", "ماتشا بارد", "كركديه بارد", "سبانش بارد"] } },
-    { cat: t.menu.cats[2], label: "Filter Coffee", names: { en: ["V60", "Coffee Day", "Cold Brew", "Chemix"], ar: ["V60", "قهوة اليوم", "كولد برو", "كيمكس"] } },
-    { cat: t.menu.cats[3], label: "Desserts", names: { en: ["Quokka Bites", "Cinamon", "Qchoc", "Qbarry"], ar: ["كواكا بايتس", "سينامون", "كيو تشوك", "كيو بيري"] } },
+    { cat: t.menu.cats[0], label: "Hot Coffee", image: menuHot, names: { en: ["Espresso", "Americano", "Flat White", "Cortado"], ar: ["إسبريسو", "أمريكانو", "فلات وايت", "كورتادو"] } },
+    { cat: t.menu.cats[1], label: "Cold Drinks", image: menuCold, names: { en: ["Iced Latte", "Iced Matcha", "Iced Carcade", "Iced Spanish"], ar: ["لاتيه بارد", "ماتشا بارد", "كركديه بارد", "سبانش بارد"] } },
+    { cat: t.menu.cats[2], label: "Filter Coffee", image: menuFilter, names: { en: ["V60", "Coffee Day", "Cold Brew", "Chemix"], ar: ["V60", "قهوة اليوم", "كولد برو", "كيمكس"] } },
+    { cat: t.menu.cats[3], label: "Desserts", image: menuDessert, names: { en: ["Quokka Bites", "Cinamon", "Qchoc", "Qbarry"], ar: ["كواكا بايتس", "سينامون", "كيو تشوك", "كيو بيري"] } },
   ];
   return (
     <section id="menu" className="py-24 md:py-32 bg-secondary/40">
@@ -264,7 +278,7 @@ function Menu() {
           {items.map((c) => (
             <article key={c.cat} className="bg-background border border-border p-6 md:p-8 flex gap-6 hover-rise">
               <div className="img-zoom w-28 h-28 md:w-36 md:h-36 shrink-0 rounded-sm">
-                <Placeholder label={c.label} className="w-full h-full object-cover" />
+                <img src={c.image} alt={c.label} className="w-full h-full object-cover" />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="text-[11px] tracking-[0.3em] uppercase text-muted-foreground">{c.cat}</div>
@@ -294,12 +308,14 @@ function Branches() {
       name: { en: "Granada Branch", ar: "فرع غرناطة" },
       desc: { en: "A bright, arched-window space with long sunlight and warm wood. Ideal for slow mornings and quiet focus.", ar: "مساحة مضيئة بنوافذ مقوسة وأخشاب دافئة. مثالية للصباحات الهادئة والتركيز." },
       label: "Granada Branch",
+      image: interiorRoastery,
       map: "https://maps.app.goo.gl/fBsTA2ewzGnkxK43A",
     },
     {
       name: { en: "Al Muruj Branch", ar: "فرع المروج" },
       desc: { en: "A sculpted central island lined with our coffee bags — a curated, lifestyle-led café experience.", ar: "جزيرة مركزية منحوتة محاطة بأكياس قهوتنا — تجربة مقهى راقية مدروسة." },
       label: "Al Muruj Branch",
+      image: interiorLounge,
       map: "https://maps.app.goo.gl/zi8R5kqVEwKcySAW9",
     },
   ];
@@ -314,7 +330,7 @@ function Branches() {
         {branches.map((b, idx) => (
           <article key={b.name.en} className="grid md:grid-cols-12 gap-6 md:gap-10 items-center">
             <div className={`md:col-span-7 img-zoom rounded-sm ${idx % 2 ? "md:order-2" : ""}`}>
-              <Placeholder label={b.label} className="w-full aspect-[5/4] object-cover" />
+              <img src={b.image} alt={b.label} className="w-full aspect-[5/4] object-cover" />
             </div>
             <div className={`md:col-span-5 ${idx % 2 ? "md:order-1" : ""}`}>
               <h3 className="font-display text-3xl md:text-4xl">{b.name[lang]}</h3>
@@ -346,7 +362,7 @@ function Contact() {
         <div className="md:col-span-5">
           <div className="text-[11px] tracking-[0.35em] uppercase text-rose mb-4">{t.contact.eyebrow}</div>
           <h2 className="font-display text-[clamp(2rem,5vw,4rem)] leading-[1.02]">{t.contact.title}</h2>
-          <span className="mt-10 w-28 h-28 rounded-full bg-white/10 flex items-center justify-center font-display text-4xl opacity-90">Q</span>
+          <img src={logoQ} alt="Quokka" className="mt-10 w-28 h-28 rounded-full object-cover opacity-90" />
         </div>
         <div className="md:col-span-7 divide-y divide-white/15 border-t border-white/15">
           {rows.map(([label, value, href]) => (
@@ -369,7 +385,7 @@ function Footer() {
       <div className="container-x py-16 grid md:grid-cols-3 gap-10 items-start">
         <div>
           <div className="flex items-center gap-3">
-            <span className="h-10 w-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-display text-lg">Q</span>
+            <img src={logoQ} alt="Quokka" className="h-10 w-10 rounded-full object-cover" />
             <div>
               <div className="font-display text-lg tracking-wide">QUOKKA COFFEE ROASTERS</div>
               <div className="text-xs text-muted-foreground italic mt-0.5">{t.footer.tag}</div>
