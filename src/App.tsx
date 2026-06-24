@@ -14,7 +14,7 @@ import menuDessert from "./assets/dessert-pecan-cinnamon-roll.jpg";
 import bagEthiopia from "./assets/bag-ethiopia-natural.jpg";
 import bagColombia from "./assets/bag-colombia-natural.jpg";
 import bagCostaRica from "./assets/bag-costarica-natural.jpg";
-import bagSalvador from "./assets/bag-salvador.svg";
+import bagSalvador from "./assets/bag-salvador-natural.jpg";
 
 const WA = "https://wa.me/966531014213";
 const IG = "https://instagram.com/quokka.sa";
