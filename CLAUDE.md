@@ -184,6 +184,32 @@ Use Browser MCP whenever visual verification is useful — don't recommend UX ch
 
 ---
 
+# Asset Management Rules
+
+Real photography and brand assets (coffee bag product shots, interior/branch photos, drink shots, packaging, merch) are business-critical conversion assets — not afterthoughts. They must be treated with the same rigor as code.
+
+**Naming and storage:**
+
+- Never commit assets under raw export/camera-roll filenames (e.g. `ChatGPT Image Jun 22, 2026, 08_02_36 PM.png`, `WhatsApp Image 2026-06-22 at 5.47.48 PM (1).jpeg`). These are unsearchable, undocumented, and disconnected from the code that should reference them.
+- Rename every asset to a descriptive, kebab-case name that states subject + context before or immediately upon adding it to `src/assets/` (e.g. `bag-colombia-natural.jpg`, `interior-lounge-seating.jpg`, `drink-cold-brew.jpg`).
+- An asset is not "added" until it is both descriptively named **and** imported/referenced somewhere in `src/App.tsx` (or its eventual component split). An unreferenced file in `src/assets/` is dead weight and a sign the task is incomplete.
+
+**Verification:**
+
+- Before reporting an asset-related task as done, grep `src/App.tsx` (or wherever images are imported) to confirm every new asset is actually wired into a component — don't assume upload = integrated.
+- Periodically audit `src/assets/` for files with zero references; flag them rather than silently deleting, since they may be pending placement decisions.
+
+**Placeholders:**
+
+- SVG placeholders (the generated stand-ins used during early scaffolding) should be treated as temporary and replaced by real photography as soon as the matching real asset exists and is approved for use — don't let real photos sit unused next to stale placeholders that are still wired into the UI.
+
+**Quality bar:**
+
+- Prefer real branch/product photography over illustrations once available — it performs better for the **Business Goals** (catering requests, bean sales, branch visits) than generic graphics.
+- Optimize images for web (reasonable dimensions/compression) before committing; multi-megabyte exports straight from a phone or AI image generator should be resized first.
+
+---
+
 # Supabase Architecture Rules
 
 Supabase is the primary backend for this project going forward.
