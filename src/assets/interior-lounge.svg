@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Quokka Interior - Lounge">
-  <rect width="400" height="400" fill="#3a2e26" />
-  <line x1="0" y1="0" x2="400" y2="400" stroke="#e9ddcf" stroke-opacity="0.25" stroke-width="1" />
-  <line x1="400" y1="0" x2="0" y2="400" stroke="#e9ddcf" stroke-opacity="0.25" stroke-width="1" />
-  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#e9ddcf" font-size="16" font-family="Inter, system-ui, sans-serif" letter-spacing="1">Quokka Interior - Lounge</text>
-</svg>

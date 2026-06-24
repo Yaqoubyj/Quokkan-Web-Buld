@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Costa Rica Bag">
-  <rect width="400" height="400" fill="#e9ddcf" />
-  <line x1="0" y1="0" x2="400" y2="400" stroke="#8a6f57" stroke-opacity="0.25" stroke-width="1" />
-  <line x1="400" y1="0" x2="0" y2="400" stroke="#8a6f57" stroke-opacity="0.25" stroke-width="1" />
-  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#8a6f57" font-size="16" font-family="Inter, system-ui, sans-serif" letter-spacing="1">Costa Rica Bag</text>
-</svg>
