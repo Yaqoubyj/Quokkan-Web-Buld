@@ -308,14 +308,14 @@ function Branches() {
       name: { en: "Granada Branch", ar: "فرع غرناطة" },
       desc: { en: "A bright, arched-window space with long sunlight and warm wood. Ideal for slow mornings and quiet focus.", ar: "مساحة مضيئة بنوافذ مقوسة وأخشاب دافئة. مثالية للصباحات الهادئة والتركيز." },
       label: "Granada Branch",
-      image: interiorRoastery,
+      image: interiorLounge,
       map: "https://maps.app.goo.gl/fBsTA2ewzGnkxK43A",
     },
     {
       name: { en: "Al Muruj Branch", ar: "فرع المروج" },
       desc: { en: "A sculpted central island lined with our coffee bags — a curated, lifestyle-led café experience.", ar: "جزيرة مركزية منحوتة محاطة بأكياس قهوتنا — تجربة مقهى راقية مدروسة." },
       label: "Al Muruj Branch",
-      image: interiorLounge,
+      image: interiorRoastery,
       map: "https://maps.app.goo.gl/zi8R5kqVEwKcySAW9",
     },
   ];
